@@ -3,10 +3,11 @@ Description=gunicorn instance to server api
 After=network.target
 
 [Service]
-User=fastapi
-Group=fastapi
+User=salamatn
+Group=salamatn
 WorkingDirectory=/home/salamatn/app/src/
 Environment="PATH=/home/salamatn/app/venv/bin"
+EnvironmentFile=/home/salamatn/.env
 ExecStart=/home/salamatn/app/venv/bin/gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:8000
 
 [Install]
